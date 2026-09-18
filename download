@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+# Licensed source data and locally generated outputs
+Input/
+input/
+data/raw/
+*.xlsx
+*.xls
+Final_Dataset.csv
+regression_results.xlsx
