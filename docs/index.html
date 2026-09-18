@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Environmental Performance and M&amp;A Announcement Returns</title>
+  <meta name="description" content="An event-study analysis of whether acquirer environmental performance helps explain short-term market reactions to US M&amp;A announcements.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23111111'/%3E%3Cpath d='M17 43V21h7l8 12 8-12h7v22h-7V32L32 44 24 32v11z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="#top">Mujtaba Ali Bhutto</a>
+    <nav aria-label="Project navigation">
+      <a href="#question">Question</a>
+      <a href="#approach">Approach</a>
+      <a href="#results">Results</a>
+      <a href="#implications">Implications</a>
+      <a href="#limitations">Limitations</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="eyebrow">Corporate Finance &amp; Analytics · March 2025</p>
+      <h1>Environmental Performance and M&amp;A Announcement Returns</h1>
+      <p class="standfirst">Do investors respond differently when an acquisition is announced by a company with stronger environmental performance?</p>
+      <p class="summary">This study examines US large-cap transactions announced between 2019 and early 2025. It connects acquirer environmental rankings and carbon intensity with short-term abnormal returns around each announcement.</p>
+      <div class="actions">
+        <a class="primary" href="#results">View the results</a>
+        <a href="https://github.com/mujtababhutto/Environmental-Performance-and-MA-Announcement-Returns/blob/main/src/analysis.py">View the code</a>
+      </div>
+    </section>
+
+    <section class="fact-strip" aria-label="Study summary">
+      <div><strong>328</strong><span>M&amp;A transactions reported in the paper</span></div>
+      <div><strong>2019–2025</strong><span>Announcement period</span></div>
+      <div><strong>2</strong><span>Event windows</span></div>
+      <div><strong>Limited</strong><span>Overall explanatory power of environmental measures</span></div>
+    </section>
+
+    <section id="question" class="section wrap two-column">
+      <div>
+        <p class="section-label">Research question</p>
+        <h2>Does a stronger environmental profile change the market’s first reaction to a deal?</h2>
+      </div>
+      <div class="prose">
+        <p>An acquisition announcement reveals several things at once: the price being paid, the proposed financing, expected synergies and management’s confidence in the transaction. The study asks whether the acquirer’s environmental profile also helps explain the immediate share-price response.</p>
+        <p>The underlying intuition runs in both directions. Stronger environmental performance might signal better risk management and preparedness for regulatory change. It could also be secondary to the economics of the transaction, particularly within a short announcement window.</p>
+      </div>
+    </section>
+
+    <section id="approach" class="section wrap">
+      <p class="section-label">Data and approach</p>
+      <h2>A deal-level event study</h2>
+      <div class="method-grid">
+        <article>
+          <span>01</span>
+          <h3>Transaction sample</h3>
+          <p>US M&amp;A announcements were combined with deal value, payment information and acquirer industry classifications.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Environmental measures</h3>
+          <p>S&amp;P environmental rankings and carbon emissions relative to sales were used to describe the acquirer’s environmental profile.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Announcement returns</h3>
+          <p>Cumulative abnormal returns were examined over <code>[-2,+2]</code> and <code>[-10,+10]</code> windows around each announcement.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Cross-sectional analysis</h3>
+          <p>The models relate announcement returns to environmental measures and deal size, with year effects, industry interactions and a post-SEC specification.</p>
+        </article>
+      </div>
+
+      <div class="definition-table">
+        <div><strong>Environmental rank</strong><span>Percentile measure from 0 to 100</span></div>
+        <div><strong>Carbon intensity</strong><span>CO₂ emissions relative to sales</span></div>
+        <div><strong>Green acquirer</strong><span>Classified relative to environmental measures within its industry</span></div>
+        <div><strong>Abnormal return</strong><span>Acquirer return assessed relative to the S&amp;P 500 benchmark</span></div>
+      </div>
+    </section>
+
+    <section id="results" class="section wrap">
+      <p class="section-label">Results</p>
+      <h2>The broad measures did not explain much of the immediate reaction</h2>
+      <p class="intro">Environmental rank and carbon intensity were not statistically significant in the main regressions. The estimated relationship between deal size and acquirer returns was negative, while the year controls captured differences across announcement periods.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Main regressions with year effects</caption>
+          <thead>
+            <tr><th>Model</th><th>R²</th><th>Environmental rank</th><th>CO₂ intensity</th><th>Log deal value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>CAR [-2,+2]</td><td>0.031</td><td>0.00005<br><small>p = 0.766</small></td><td>−0.00007<br><small>p = 0.419</small></td><td>−0.0030<br><small>p = 0.246</small></td></tr>
+            <tr><td>CAR [-10,+10]</td><td>0.060</td><td>0.00010<br><small>p = 0.697</small></td><td>−0.00020<br><small>p = 0.245</small></td><td>−0.0071<br><small>p = 0.120</small></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="findings-grid">
+        <article>
+          <p class="finding-number">01</p>
+          <h3>No simple green premium</h3>
+          <p>The main specifications did not show a clear relationship between the acquirer’s environmental profile and its short-term announcement return.</p>
+        </article>
+        <article>
+          <p class="finding-number">02</p>
+          <h3>Industry context mattered</h3>
+          <p>The paper reports a positive technology-sector interaction with environmental rank, a marginally negative interaction for financials and no significant energy-sector effect.</p>
+        </article>
+        <article>
+          <p class="finding-number">03</p>
+          <h3>No post-proposal difference</h3>
+          <p>The difference-in-differences model did not identify a significant change in the reaction to green acquirers following the SEC’s March 2022 climate-disclosure proposal.</p>
+        </article>
+      </div>
+
+      <div class="result-note">
+        <h3>Selected reported estimates</h3>
+        <dl>
+          <div><dt>Technology × environmental rank</dt><dd>0.0007 · p = 0.035</dd></div>
+          <div><dt>Financials × environmental rank</dt><dd>−0.0004 · p = 0.094</dd></div>
+          <div><dt>Green × post-SEC proposal</dt><dd>−0.0010 · p = 0.912</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="implications" class="section wrap two-column">
+      <div>
+        <p class="section-label">Interpretation</p>
+        <h2>Environmental performance may matter without becoming the announcement-day story</h2>
+      </div>
+      <div class="prose">
+        <p>Environmental characteristics can shape long-term risk, regulation and corporate strategy. An acquisition announcement, however, concentrates attention on transaction-specific information. Price, financing, strategic fit and integration risk may dominate the initial response.</p>
+        <p>The findings also suggest that environmental information should be interpreted in context. The same measure can carry different implications across sectors, and a broad company-level score may not capture the environmental economics of a particular acquisition.</p>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <p class="section-label">Practical implications</p>
+      <div class="audience-list">
+        <article><h3>Corporate development</h3><p>Connect environmental considerations to the economics of the transaction. A general sustainability profile is unlikely to replace a convincing explanation of price, strategy and execution.</p></article>
+        <article><h3>Investors</h3><p>Treat environmental ratings as part of the acquirer’s broader risk profile, not necessarily as a standalone short-term event signal.</p></article>
+        <article><h3>Research</h3><p>Transaction-specific environmental exposures and industry materiality may be more informative than a single aggregate score.</p></article>
+      </div>
+    </section>
+
+    <section id="limitations" class="section wrap two-column">
+      <div>
+        <p class="section-label">Scope and limitations</p>
+        <h2>What the study can and cannot answer</h2>
+      </div>
+      <div class="prose">
+        <p>The analysis focuses on short windows around M&amp;A announcements. It does not measure whether environmentally stronger transactions create greater value over several years.</p>
+        <p>Environmental rankings and carbon intensity are broad company-level measures. They do not fully describe the environmental quality, liabilities or transition implications of each target and transaction.</p>
+        <p>M&amp;A announcements also reveal several financially important facts at the same time. The estimates should therefore be read as evidence from this sample and design rather than a universal conclusion about ESG and acquisition value.</p>
+      </div>
+    </section>
+
+    <section class="download-section wrap">
+      <div>
+        <p class="section-label">Code and documentation</p>
+        <h2>Review the analytical workflow</h2>
+        <p>The public repository contains the original analysis script and project documentation. The paper and licensed Bloomberg and S&amp;P source data are not published.</p>
+      </div>
+      <div class="actions">
+        <a class="primary" href="https://github.com/mujtababhutto/Environmental-Performance-and-MA-Announcement-Returns">Open repository</a>
+        <a href="https://github.com/mujtababhutto/Environmental-Performance-and-MA-Announcement-Returns/blob/main/src/analysis.py">View code</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Research team</strong>
+        <p>Leonard von Prónay · Nils Eisaks · Hendrik Arnemann · Marco Leibersperger · Mujtaba Bhutto</p>
+      </div>
+      <div>
+        <strong>Frankfurt School of Finance &amp; Management</strong>
+        <p>Corporate Finance &amp; Valuation · Supervisor: Prof. Dr. Thorsten Martin</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
